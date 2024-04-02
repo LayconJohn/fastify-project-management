@@ -1,12 +1,17 @@
 import Fastify from "fastify";
+import userRoutes from "./modules/user/user.route";
 
 const server = Fastify();
 
-server.get('/health', async function(request, response) {
+server.get('/health', async function() {
     return {status: "OK"}
 });
 
 async function main(){
+
+    server.register(userRoutes, {
+        prefix: 'api/users'
+    })
 
     try {
         await server.listen({
