@@ -18,3 +18,11 @@ export async function createUser(input: CreateUserSchema){
 
     return user;
 }
+
+export async function findUserByemail(email: string){
+    return prisma.user.findUnique({
+        where: {
+            email
+        }
+    })
+}
