@@ -1,4 +1,5 @@
-import Fastify from "fastify";
+import Fastify, { FastifyRequest, FastifyReply } from "fastify";
+import fjwt from "fastify-jwt"
 import userRoutes from "./modules/user/user.route";
 import { userSchemas } from "./modules/user/user.schema";
 
